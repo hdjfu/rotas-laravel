@@ -23,7 +23,7 @@ Route::get('/hello/{nome}', function ($nome) {
     if(preg_match('/[0-9]/', $nome))
         return "Não é permitido conter números";
     return "Olá " . $nome . " Bem-vindo ao meu site";
-});
+})->name('welcome');
 Route::get('/conta/{n1}/{n2}/{operação?}', function ($n1, $n2, $operacao=null) {
     
     if(!ctype_digit($n1) || !ctype_digit($n2))
@@ -59,7 +59,7 @@ Route::get('/conta/{n1}/{n2}/{operação?}', function ($n1, $n2, $operacao=null)
     }
 
 
-});
+})->name('conta');
 
 Route::get('/idade/{ano}/{mes?}/{dia?}', function ($ano, $mes=null, $dia=null) {
 
@@ -120,4 +120,4 @@ Route::get('/idade/{ano}/{mes?}/{dia?}', function ($ano, $mes=null, $dia=null) {
     }
     */
     
-});
+})->name('idade');
